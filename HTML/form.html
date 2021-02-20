@@ -1,0 +1,54 @@
+<h1> Race Registration!</h1>
+<form action="">
+    <p>
+        <label for="fn">First Name</label>
+        <input type="text" name="first_name" id="fn" required="true">
+        <label for="ln">Last Name</label>
+        <input type="text" name="last_name" id="ln" required="true">
+    </p>
+    <p>
+        Select a Race:
+    <p>
+    <div>
+        <input type="radio" id="5k" name="distance" value="5k">
+        <label for="5k">Fun Run 5k</label>
+    </div>
+    <div>
+        <input type="radio" id="half" name="distance" value="half">
+        <label for="half">Half Marathon</label>
+    </div>
+    <div>
+        <input type="radio" id="full" name="distance" value="full">
+        <label for="full">Fun Run 5k</label>
+    </div>
+    </p>
+    </p>
+    <label for="email_id">Email</label>
+    <input type="email" name="email" id="email_id" pattern="@">
+    <label for="password_id">Password</label>
+    <input type="password" name="password" id="password_id" placeholder="password"> <br>
+    <label for="age">Select Age Group</label>
+    <select name="age" id="age">
+        <option value="18">under 18</option>
+        <option value="18-30">18-30</option>
+        <option value="30-50">30-50</option>
+        <option value="50+">50+</option>
+    </select> <br>
+    <button>Register!</button>
+</form>
+
+<h1>Internet Searches</h1>
+
+<form action="https://www.google.com/search">
+    <!-- https://www.reddit.com/search -->
+    <label for="search_string">Search Reddit</label>
+    <input type="text" id="search_string" name="q">
+    <button>Search</button> <br>
+</form>
+
+<form action="https://www.youtube.com/results">
+    <label for="search_string">Search YouTube</label>
+    <input type="text" id="search_string" name="search_query">
+    <input type="text" id="search_string" name="v">
+    <button>Search Youtube</button> <br>
+</form>

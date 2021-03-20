@@ -1,65 +1,68 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Show video box example</title>
-    <style>
-      div {
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%,-50%);
-        width: 480px;
-        height: 380px;
-        border-radius: 10px;
-        background-color: #eee;
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.1));
-      }
 
-      .hidden {
-        left: -50%;
-      }
+<head>
+  <meta charset="utf-8">
+  <title>Show video box example</title>
+  <style>
+    div {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 380px;
+      border-radius: 10px;
+      background-color: #eee;
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    }
 
-      .showing {
-        left: 50%;
-      }
+    .hidden {
+      left: -50%;
+    }
 
-      div video {
-        display: block;
-        width: 400px;
-        margin: 40px auto;
-      }
+    .showing {
+      left: 50%;
+    }
 
-    </style>
-  </head>
-  <body>
-    <button>Display video</button>
+    div video {
+      display: block;
+      width: 400px;
+      margin: 40px auto;
+    }
+  </style>
+</head>
 
-    <div class="hidden">
-      <video>
-        <source src="rabbit320.mp4" type="video/mp4">
-        <source src="rabbit320.webm" type="video/webm">
-        <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p> 
-      </video>
-    </div>
+<body>
+  <button>Display video</button>
 
-    <script>
+  <div class="hidden">
+    <video>
+      <source src="rabbit320.mp4" type="video/mp4">
+      <source src="rabbit320.webm" type="video/webm">
+      <p>Your browser doesn't support HTML5 video. Here is a <a href="rabbit320.mp4">link to the video</a> instead.</p>
+    </video>
+  </div>
 
-      const btn = document.querySelector('button');
-      const videoBox = document.querySelector('div');
-      const video = document.querySelector('video');
+  <script>
 
-      btn.onclick = function() {
-        videoBox.setAttribute('class','showing');
-      }
+    const btn = document.querySelector('button');
+    const videoBox = document.querySelector('div');
+    const video = document.querySelector('video');
 
-      videoBox.onclick = function() {
-        videoBox.setAttribute('class','hidden');
-      };
+    btn.onclick = function () {
+      videoBox.setAttribute('class', 'showing');
+    }
 
-      video.onclick = function() {
-        video.play();
-      };
+    videoBox.onclick = function () {
+      videoBox.setAttribute('class', 'hidden');
+    };
 
-    </script>
-  </body>
+    video.onclick = function () {
+      e.stopPropagation();
+      video.play();
+    };
+
+  </script>
+</body>
+
 </html>

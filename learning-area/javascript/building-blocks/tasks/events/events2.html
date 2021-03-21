@@ -1,41 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Events: Task 2</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
 
-      p {
-        color: purple;
-        margin: 0.5em 0;
-      }
+<head>
+  <meta charset="utf-8" />
+  <title>Events: Task 2</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-      button {
-        display: block;
-        margin: 20px 0 20px 20px;
-      }
+    p {
+      color: purple;
+      margin: 0.5em 0;
+    }
 
-      canvas {
-        border: 1px solid black;
-      }
-    </style>
-  </head>
+    button {
+      display: block;
+      margin: 20px 0 20px 20px;
+    }
 
-  <body>
-    <section class="preview">
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
 
-    </section>
+<body>
+  <section class="preview">
 
-    <canvas width="480" height="320" tabindex="0">
+  </section>
 
-    </canvas>
+  <canvas width="480" height="320" tabindex="0">
+
+  </canvas>
 
 
-    <textarea class="playable playable-js" style="height: 220px;">
+  <textarea class="playable playable-js" style="height: 220px;">
 
 let canvas = document.querySelector('canvas');
 let ctx = canvas.getContext('2d');
@@ -60,10 +61,11 @@ drawCircle(x, y, size);
 
     </textarea>
 
-    <div class="playable-buttons">
-      <input id="reset" type="button" value="Reset" />
-    </div>
-  </body>
-  <script class="editable"></script>
-  <script src="../playable.js"></script>
+  <div class="playable-buttons">
+    <input id="reset" type="button" value="Reset" />
+  </div>
+</body>
+<script class="editable"></script>
+<script src="../playable.js"></script>
+
 </html>

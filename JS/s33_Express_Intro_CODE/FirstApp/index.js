@@ -1,61 +1,49 @@
-// This download does not include the node_modules folder
-// REMEMBER TO RUN "npm install" first, to tell NPM to download the needed packages
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 
-// app.use((req, res) => {
-//     console.log("WE GOT A NEW REQUEST!!")
-//     res.send('<h1>This is my webpage!</h1>')
+console.dir(app)
+const port = 8080
+
+// application for every request
+// app.use(function (req, res) {
+//     console.log("new request")
+//     res.send("hellow this is a respone")
 // })
-
-
-app.get('/', (req, res) => {
-    res.send('Welcome to the home page!')
+app.get('/', function (req, res) {
+    res.send("home page")
+})
+app.get('/cats', function (req, res) {
+    res.send('Hello World cats!')
 })
 
-app.get('/r/:subreddit', (req, res) => {
-    const { subreddit } = req.params;
-    res.send(`<h1>Browsing the ${subreddit} subreddit</h1>`)
+app.get('/dogs', function (req, res) {
+    res.send('Dogs')
 })
 
-app.get('/r/:subreddit/:postId', (req, res) => {
-    const { subreddit, postId } = req.params;
-    res.send(`<h1>Viewing Post ID: ${postId} on the ${subreddit} subreddit</h1>`)
+
+app.post('/cats', function (req, res) {
+    res.send('diff than get request')
 })
 
-app.post('/cats', (req, res) => {
-    res.send('POST REQUEST TO /cats!!!! THIS IS DIFFERENT THAN A GET REQUEST!')
+//parse request parameters
+app.get('/r/:subreddit/:id', function (req, res) {
+    const { subreddit, id } = req.params
+    res.send(`this is a ${subreddit} ${id} subreddit`)
 })
 
-app.get('/cats', (req, res) => {
-    res.send('MEOW!!')
-})
-
-app.get('/dogs', (req, res) => {
-    res.send('WOOF!')
-})
-app.get('/search', (req, res) => {
-    const { q } = req.query;
-    if (!q) {
-        res.send('NOTHING FOUND IF NOTHING SEARCHED!')
-    } else {
-        res.send(`<h1>Search results for: ${q}</h1>`)
+//q and color are key-value pairs in request object
+app.get('/search', function (req, res) {
+    const { q, color } = req.query;
+    if (!q || !color) {
+        res.send("no results")
     }
+    res.send(`<h1> this is query for ${q} ${color} </h1>`)
 })
 
-app.get('*', (req, res) => {
-    res.send(`I don't know that path!`)
+app.get('*', function (req, res) {
+    res.send('wrong path')
 })
 
-
-
-
-// /cats => 'meow'
-// /dogs => 'woof'
-// '/' 
-
-
-
-app.listen(8080, () => {
-    console.log("LISTENING ON PORT 8080")
+app.listen(port, function () {
+    console.log(`Example app listening at http://localhost:${port}`)
 })

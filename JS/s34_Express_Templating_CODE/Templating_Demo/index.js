@@ -22,15 +22,33 @@ app.get('/cats', (req, res) => {
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
     const data = redditData[subreddit];
+    console.log(data)
     if (data) {
         res.render('subreddit', { ...data });
     } else {
         res.render('notfound', { subreddit })
     }
+
 })
 
+
+// app.get('/r/:subreddit', (req, res) => {
+//     const { subreddit } = req.params;
+//     const data = redditData[subreddit];
+//     if (data) {
+//         res.render('subreddit', { ...data });
+//     } else {
+//         res.render('notfound', { subreddit })
+//     }
+// })
+
+// app.get('/rand', (req, res) => {
+//     const num = Math.floor(Math.random() * 10) + 1;
+//     res.render('random', { num })
+// })
+
 app.get('/rand', (req, res) => {
-    const num = Math.floor(Math.random() * 10) + 1;
+    const num = Math.floor((Math.random() * 10) + 1);
     res.render('random', { num })
 })
 

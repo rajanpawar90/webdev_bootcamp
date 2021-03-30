@@ -1,6 +1,7 @@
 {
-  "name": "MongooseBasics",
+  "name": "32_Mongoose_Express",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.12.2"
-  },
-  "description": ""
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.0"
+  }
 }
